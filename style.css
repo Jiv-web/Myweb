@@ -37,10 +37,11 @@ header {
 }
 
 .socials a {
-    display: block;
-    color: cyan;
-    text-decoration: none;
-    margin: 5px;
+    background: #333;
+    padding: 10px;
+    margin: 5px auto;
+    width: 200px;
+    border-radius: 5px;
 }
 
 .donation {
