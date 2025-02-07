@@ -1,99 +1,216 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Comic+Neue:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #333;
+    --light-bg: #f8f9fa;
+    --dark-bg: #222;
+    --text-color: #444;
+    --accent-color: #ff5722;
+    --transition: all 0.3s ease-in-out;
+}
+
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
+/* Body Styling */
 body {
-    background: #121212;
-    color: white;
-    text-align: center;
-    padding: 20px;
+    background: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
+/* Header Section */
 header {
-    padding: 20px;
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--primary-color);
+    color: white;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-.about img {
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Scroll Down Arrow */
+.scroll-down-arrow {
+    font-size: 2rem;
+    margin-top: 15px;
+    animation: bounce 1.5s infinite alternate;
+    cursor: pointer;
+}
+
+/* About Section */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+.profile-pic {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-top: 10px;
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.about p {
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* Skills Section */
+.skills {
+    background: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.skills h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .skills ul {
     list-style: none;
-    padding: 0; /* Removed padding to avoid extra space */
+    padding: 0;
 }
 
 .skills li {
-    background: #333;
-    padding: 10px;
-    margin: 5px auto;
-    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 15px;
     border-radius: 5px;
-    transition: background 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.skills li:hover {
-    background: #444; /* Hover effect for better interactivity */
-}
-
-.socials a {
-    display: block; /* Ensure links take full width */
-    background: #333;
-    padding: 10px;
     margin: 5px auto;
-    width: 200px;
-    border-radius: 5px;
-    color: white; /* Ensure text color is white */
-    text-decoration: none; /* Remove underline */
-    transition: background 0.3s ease; /* Smooth transition for hover effect */
+    max-width: 400px;
 }
 
-.socials a:hover {
-    background: #444; /* Hover effect for better interactivity */
+/* Socials Section */
+.socials {
+    text-align: center;
+    padding: 50px 20px;
 }
 
+.socials h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.social-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+}
+
+/* Donation Section */
 .donation {
-    background: #222;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--light-bg);
 }
 
 .upi-id {
     font-size: 1.2rem;
-    color: #fff;
+    font-weight: bold;
     margin: 10px 0;
-    padding: 10px;
-    background: #333;
-    border-radius: 5px;
-    display: inline-block;
 }
 
 .upi-button {
-    background: #0084ff;
+    background: var(--primary-color);
     color: white;
-    padding: 15px 30px;
     border: none;
-    border-radius: 8px;
-    font-size: 18px;
+    padding: 10px 20px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 15px;
+    transition: var(--transition);
 }
 
 .upi-button:hover {
-    background: #0069d9;
-    transform: translateY(-2px);
+    background: var(--accent-color);
 }
 
+/* Footer */
 footer {
-    margin-top: 20px;
-    font-size: 12px;
-    color: #aaa; /* Lighter color for footer text */
+    text-align: center;
+    background: var(--secondary-color);
+    color: white;
+    padding: 15px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .about {
+        flex-direction: row;
+        text-align: left;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .about p {
+        margin-left: 30px;
+    }
+
+    .social-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
 }
