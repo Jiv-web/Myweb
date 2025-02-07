@@ -21,11 +21,12 @@ header {
     height: 150px;
     border-radius: 50%;
     margin-top: 10px;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
 }
 
 .skills ul {
     list-style: none;
-    padding: 10px;
+    padding: 0; /* Removed padding to avoid extra space */
 }
 
 .skills li {
@@ -34,14 +35,27 @@ header {
     margin: 5px auto;
     width: 200px;
     border-radius: 5px;
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.skills li:hover {
+    background: #444; /* Hover effect for better interactivity */
 }
 
 .socials a {
+    display: block; /* Ensure links take full width */
     background: #333;
     padding: 10px;
     margin: 5px auto;
     width: 200px;
     border-radius: 5px;
+    color: white; /* Ensure text color is white */
+    text-decoration: none; /* Remove underline */
+    transition: background 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.socials a:hover {
+    background: #444; /* Hover effect for better interactivity */
 }
 
 .donation {
@@ -81,4 +95,5 @@ header {
 footer {
     margin-top: 20px;
     font-size: 12px;
+    color: #aaa; /* Lighter color for footer text */
 }
